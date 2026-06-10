@@ -1,9 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-$primary-color: #0284c7;
-$secondary-color: #38bdf8;
-$dark-color: #0f172a;
-$light-color: #f8fafc;
+// BASE COLOR PALETTE 
+
+$white:       #ffffff;
+$slate-100:   #f8fafc;
+$slate-200:   #e2e8f0;
+$slate-700:   #334155;
+$slate-900:   #0f172a;
+
+$indigo-50:   #f5f3ff;
+$indigo-100:  #e0e7ff;
+$indigo-200:  #c7d2fe;
+$indigo-500:  #6366f1;
+$indigo-600:  #4f46e5;
+$indigo-800:  #3730a3;
+
+//SEMANTIC THEME VARIABLES 
+
+// Main Action Colors 
+$theme-primary:        $indigo-600;
+$theme-primary-hover:  $indigo-500;
+$theme-primary-dark:   $indigo-800;
+
+// Dark / Neutral Action Colors 
+$theme-dark:           $slate-900; 
+$theme-dark-hover:     $slate-700; 
+$theme-neutral-text:   $slate-700; 
+
+// Backgrounds & Layout
+$theme-bg-main:        $slate-100;
+$theme-bg-card-light:  $white;    
+$theme-bg-card-accent: $indigo-50;
+
+// Borders
+$theme-border-light:   $slate-200;
+$theme-border-accent:  $indigo-200;
 
 $font-main: 'Roboto', sans-serif;
+
+@function transparent-color($color, $opacity) {
+    @return rgba($color, $opacity);
+}
 

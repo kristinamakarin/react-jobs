@@ -1,0 +1,97 @@
+@use 'variables';
+
+.cards-section {
+    padding: 3rem 0;
+    background-color: variables.$theme-bg-main;
+}
+
+.cards-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.card {
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px variables.transparent-color(variables.$theme-dark, 0.05), 0 2px 4px -1px variables.transparent-color(variables.$theme-dark, 0.03);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px variables.transparent-color(variables.$theme-dark, 0.10), 0 4px 6px -2px variables.transparent-color(variables.$theme-dark, 0.05);
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: #4f46e5; 
+    color: #ffffff; 
+    transition: background-color 0.2s ease, transform 0.1s ease;      
+        
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.bg-light {
+    background-color: variables.$theme-bg-card-light;
+    border: 1px solid variables.$theme-border-light;
+
+    h2 { 
+        color: variables.$theme-dark;
+    }
+
+    p { 
+        color: variables.$theme-neutral-text;
+    }
+
+    .btn {
+        background-color: variables.$theme-dark;
+        color: variables.$white;      
+        
+        &:hover {
+            background-color: variables.$theme-dark-hover;
+        }
+    }
+}
+
+.bg-accent {
+    background-color: variables.$theme-bg-card-accent;
+    border: 1px solid variables.$theme-border-accent;
+
+    h2 { 
+        color: variables.$theme-primary;
+    }
+
+    p { 
+        color: variables.$theme-primary-dark;
+    }
+
+    .btn {
+        background-color: variables.$theme-primary;
+        color: variables.$white; 
+        
+        &:hover {
+            background-color: variables.$theme-primary-hover;
+        }
+    }
+}

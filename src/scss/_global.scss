@@ -8,5 +8,9 @@
 
 body {
     font-family: variables.$font-main;
-    background-color: variables.$light-color;
+    background-color: variables.$theme-bg-main;
+}
+
+h1, h2, h3, h4, h5, h6, input, button, select, textarea, .btn {
+    font-family: inherit;
 }

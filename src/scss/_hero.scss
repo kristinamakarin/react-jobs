@@ -1,10 +1,10 @@
 @use 'variables';
 
 .hero-section {
-    background-color: variables.$primary-color;
+    background-color: variables.$theme-primary;
     padding: 4rem 0;
     text-align: center;
-    border-bottom: 1px solid #ffffff1a;
+    border-bottom: 1px solid variables.transparent-color(variables.$white, 0.10);
 }
 
 .hero-container {
@@ -14,14 +14,14 @@
 }
 
 .main-title {
-    color: #ffffff;
+    color: variables.$white;
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1rem;
 }
 
 .hero-subtitle {
-    color: #ffffff8a;
+    color: variables.transparent-color(variables.$white, 0.8);
     font-size: 1.5rem;
     font-weight: 400;
 }

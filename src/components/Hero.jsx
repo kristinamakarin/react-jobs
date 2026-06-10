@@ -4,8 +4,8 @@ const Hero = ( {title = 'Become a React Developer', subtitle = 'Find the React j
   return (
     <section className="hero-section">
         <div className="hero-container">
-            <h1 className="main-title">{title}</h1>
-            <p className="hero-subtitle">{subtitle}</p>
+            <h1 className="main-title"> {title} </h1>
+            <p className="hero-subtitle"> {subtitle} </p>
         </div>
     </section>
   )
