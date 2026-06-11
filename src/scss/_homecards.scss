@@ -5,6 +5,14 @@
     background-color: variables.$theme-bg-main;
 }
 
+.listings-title {
+    font-size: 2.25rem; 
+    font-weight: 700;
+    color: variables.$theme-primary; 
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
 .cards-grid {
     max-width: 1200px;
     margin: 0 auto;
@@ -12,6 +20,17 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+}
+
+.cards-grid-jobs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.cards-section-jobs {
+    padding: 3rem;
+    background-color: variables.$theme-bg-card-accent;
 }
 
 .card {
@@ -34,6 +53,40 @@
     p {
         margin-bottom: 1.5rem;
         line-height: 1.6;
+    }
+
+    .job-type {
+        color: variables.$theme-neutral-text;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .job-salary {
+        color: variables.$theme-primary;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .job-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid variables.$theme-border-light;
+        padding-top: 1rem;
+        margin-top: auto; 
+    }
+
+    .job-location {
+        color: rgba(209, 0, 0, 0.817);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.95rem;
+
+        i {
+            color: variables.$theme-primary-hover; // Ikonica će biti svetlo indigo
+        }
     }
 }
 
@@ -92,6 +145,49 @@
         
         &:hover {
             background-color: variables.$theme-primary-hover;
+        }
+    }
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    
+    background-color: variables.$theme-primary; 
+    color: variables.$white; 
+    transition: background-color 0.2s ease, transform 0.1s ease;      
+        
+    &:hover {
+        background-color: variables.$theme-primary-hover;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.button-card {
+    text-align: center;
+
+    .btn-view-all-jobs {
+        display: inline-block;
+        padding: 0.8rem 5rem;
+        font-weight: 500;
+        text-decoration: none;
+        background-color: variables.$theme-dark;
+        color: variables.$white;
+        border-radius: 12px;
+        transition: background-color 0.2s ease, transform 0.1s ease;
+
+        &:hover {
+            background-color: variables.$theme-dark-hover; // Tvoja svetlija crna za prelaz mišem
+        }
+
+        &:active {
+            transform: scale(0.98);
         }
     }
 }
