@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from "./Card"
+import { Link } from 'react-router-dom'
 
 const HomeCards = () => {
   return (
@@ -8,12 +9,12 @@ const HomeCards = () => {
             <Card>
                 <h2> For Developers </h2>
                 <p> Browse our React jobs and start your career today </p>
-                <a href="/" className="btn btn-primary"> Browse Jobs </a>
+                <Link to="/jobs" className="btn btn-primary"> Browse Jobs </Link>
             </Card>
             <Card bg="bg-accent">
                 <h2> For Employers </h2>
                 <p> List your job to find the perfect React developer for your rol </p>
-                <a href="/" className="btn btn-secondary"> Add Job </a>
+                <Link to="/add-jobs" className="btn btn-secondary"> Add Job </Link>
             </Card>
         </div>
     </section>

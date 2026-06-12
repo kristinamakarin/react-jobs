@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import { FaMapMarkedAlt } from "react-icons/fa";
+import { Link } from 'react-router-dom'
 
 const JobListing = ( {job} ) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -25,7 +26,7 @@ const JobListing = ( {job} ) => {
             <FaMapMarkedAlt className="icon-location"/>
                 {job.location}
             </div>
-            <a href={`/jobs/${job.id}`} className="btn-primary">Read More</a>
+            <Link to={`/jobs/${job.id}`} className="btn-primary">Read More</Link>
         </div>
     </div>
   )

@@ -1,0 +1,45 @@
+@use '_variables';
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 24rem;
+    text-align: center;
+    padding: 0 1rem;
+
+    &-icon {
+        color: #facc15;
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    &-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: variables.$theme-dark;
+    }
+
+    &-text {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: variables.$theme-neutral-text;
+    }
+
+    &-btn {
+        display: inline-block;
+        background-color: variables.$theme-primary;
+        color: variables.$white;
+        font-weight: 500;
+        padding: 0.5rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: backgrund-color 0.2 ease;
+        
+        &:hover {
+            background-color: variables.$theme-primary-hover;
+        }
+    }
+}
