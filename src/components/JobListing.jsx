@@ -1,16 +1,30 @@
 import React from 'react'
+import { useState } from "react";
+import { FaMapMarkedAlt } from "react-icons/fa";
 
 const JobListing = ( {job} ) => {
+  const [showFullDescription, setShowFullDescription] = useState(false);
+  let description = job.description;
+  if(!showFullDescription) {
+    description = description.substring(0, 90) + '...';
+  }
+  
   return (
-    <div key={job.id} className="card bg-light">
+    <div className="card bg-light">
 
         <div className="job-type">{job.type}</div>
         <h2>{job.title}</h2>
-        <p>{job.description}</p>
+        <p>{description}</p>
+        <button className="btn-toggle" onClick={() => setShowFullDescription((prevState)=>(!prevState))}>
+          {showFullDescription ? 'Less' : 'More'}
+        </button>
         <h3 className="job-salary">{job.salary} / Year</h3>
 
         <div className="job-footer">
-            <div className="job-location"> {job.location}</div>
+            <div className="job-location">
+            <FaMapMarkedAlt className="icon-location"/>
+                {job.location}
+            </div>
             <a href={`/jobs/${job.id}`} className="btn-primary">Read More</a>
         </div>
     </div>
