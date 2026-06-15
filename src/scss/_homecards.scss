@@ -207,3 +207,13 @@
         color: variables.$theme-primary-hover; 
     }
 }
+
+.spinner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    grid-column: 1 / -1;
+    padding: 5rem 0;
+
+}

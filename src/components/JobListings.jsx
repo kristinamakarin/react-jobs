@@ -2,6 +2,7 @@ import jobs from '../jobs.json';
 import JobListing from './JobListing';
 import { useState, useEffect } from 'react';
 import React from 'react'
+import Spinner from "./Spinner";
 
 const JobListings = ( {isHome = false} ) => {
     const [jobs, setJobs] = useState([]);
@@ -29,7 +30,7 @@ const JobListings = ( {isHome = false} ) => {
         <h2 className="listings-title"> { isHome ? 'Recent Jobs' : 'Browse Jobs' }</h2>
         <div className="cards-grid-jobs">
             {loading ? (
-                <h2>Loading...</h2>
+                <Spinner />
             ) : (
                 <>
                     {jobs.map((job) => (
