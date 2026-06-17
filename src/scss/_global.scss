@@ -14,3 +14,10 @@ body {
 h1, h2, h3, h4, h5, h6, input, button, select, textarea, .btn {
     font-family: inherit;
 }
+
+.container {
+    width: 100%;         
+    max-width: 1200px;         
+    margin: 0 auto; 
+    padding: 0 1.5rem;
+}

@@ -1,0 +1,138 @@
+@use 'variables';
+
+.back-to {
+    padding: 1.5rem 0;
+
+    &-btn {
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+        color: variables.$theme-primary;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: variables.$theme-primary-hover;
+        }
+    }
+
+    &-icon {
+        font-size: 0.8rem;
+    } 
+}
+
+.job-details-section {
+    background-color: variables.$theme-bg-card-accent;
+    padding: 2.5rem 0;
+    min-height: calc(100vh - 140px);
+}
+
+.job-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 70% 30%;
+    }
+}
+
+.job-card {
+    background-color: variables.$white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px variables.transparent-color(variables.$theme-dark, 0.05), 0 2px 4px -1px variables.transparent-color(variables.$theme-dark, 0.03);
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.text-center-mobile {
+    text-align: center !important;
+
+    @media (min-width: 768px) {
+        text-align: left !important;
+    }
+}
+
+.job-main {
+    .job-type {
+        color: variables.transparent-color(variables.$theme-neutral-text, 0.7);
+        font-weight: 500;
+        margin: 0.5rem;
+    }
+    .job-location {
+        margin: 0.5rem;
+        color: rgba(209, 0, 0, 0.817);
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        font-weight: 500;
+
+        @media (min-width: 768px) {
+            justify-content: flex-start; 
+        }
+    }
+    .card-subtitle {
+        margin: 0.5rem 0;
+        color: variables.$theme-primary;
+    }
+    .job-description {
+        font-weight: 450;
+    }
+}
+.job-sidebar {
+    .sidebar-title {
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .company-name {
+        margin: 0.5rem 0;
+    }
+    .company-description {
+        margin-bottom: 1rem;
+        font-weight: 450;
+    }
+    .contact-label {
+        margin: 1rem 0;
+        font-weight: 500;
+    }
+    .contact-badge {
+        padding: 0.4rem;
+        background-color: variables.$theme-border-accent;
+        font-weight: 700;
+    }
+    .button{
+        display: block;
+        width: 100%;
+        padding: 0.7rem;
+        color: variables.$white;
+        border-radius: 2rem;
+        text-align: center;
+        font-weight: 700;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background-color 0.2s ease;
+    }
+    .btn-edit {
+        background-color: variables.$theme-primary;
+        text-decoration: none;
+        align-items: center;
+
+        &:hover {
+            background-color: variables.$theme-primary-hover;
+        }
+    }
+    .btn-delete {
+        background-color: rgba(209, 0, 0, 0.817);
+        border-color: rgba(209, 0, 0, 0.817);
+
+        &:hover {
+            background-color: #db4e4e;
+            
+        }
+    }
+}
