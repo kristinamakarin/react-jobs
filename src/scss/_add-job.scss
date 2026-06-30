@@ -1,0 +1,92 @@
+@use 'variables';
+
+.add-job-section {
+    background-color: variables.$theme-bg-card-accent;
+    padding: 4rem 0;
+    min-height: calc(100vh - 80px);
+}
+
+.form-container {
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+.form-card {
+    background-color: variables.$white;
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid variables.$theme-border-accent;
+    box-shadow: 0 4px 6px -1px variables.transparent-color(variables.$theme-dark, 0.05);
+    
+    @media (min-width: 768px) {
+        margin: 0;
+    }
+}
+
+.form-title {
+    font-size: 1.85rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: variables.$theme-dark;
+}
+
+.form-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: variables.$theme-dark;
+}
+
+.form-group {
+    margin: 1rem;
+}
+
+.form-label {
+    display: block;
+    color: variables.transparent-color(variables.$theme-neutral-text, 0.9);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: variables.$theme-dark;
+    background-color: variables.$white;
+    border: 1px solid variables.$theme-border-accent;
+    border-radius: 0.25rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+        border-color: variables.$theme-primary;
+        box-shadow: 0 0 0 3px variables.transparent-color(variables.$theme-primary, 0.15);
+    }
+
+    &::placeholder {
+        color: variables.transparent-color(variables.$theme-neutral-text, 0.5);
+    }
+}
+
+.btn {
+    &.btn-submit {
+        background-color: variables.$theme-primary;
+        border: none;
+        outline: none;
+
+        &:hover {
+            background-color: variables.$theme-primary-hover;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px variables.transparent-color(variables.$theme-primary, 0.4);
+        }
+    }
+}
