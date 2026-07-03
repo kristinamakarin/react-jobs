@@ -1,23 +1,48 @@
 import React from 'react';
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
-const AddJobPage = () => {
+const AddJobPage = ( {addJobSubmit} ) => {
 
     const [title, setTitle] = useState('');
-    const [type, setType] = useState('');
+    const [type, setType] = useState('Full-Time');
     const [location, setLocation] = useState('');
     const [description, setDescription] = useState('');
-    const [salary, setSalary] = useState('');
+    const [salary, setSalary] = useState('Under 50K');
     const [companyName, setCompanyName] = useState('');
     const [companyDescription, setCompanyDescription] = useState('');
     const [contactEmail, setContactEmail] = useState('');
     const [contactPhone, setContactPhone] = useState('');
 
+    const navigate = useNavigate();
+
+    const submitForm = (e) => {
+        e.preventDefault();
+
+        const newJob = {
+            title,
+            type,
+            location,
+            description,
+            salary,
+            company: {
+                name: companyName,
+                description: companyDescription,
+                contactEmail,
+                contactPhone
+            },
+        };
+
+        addJobSubmit(newJob);
+
+        return navigate('/jobs');
+    }
+
     return (
         <section className="add-job-section">
             <div className="container form-container">
                 <div className="form-card">
-                    <form action="">
+                    <form action="" onSubmit={submitForm}>
                         <h2 className="form-title">Add Job</h2>
                         <div className="form-group">
                             <label htmlFor="type" className="form-label">Job Type</label>
