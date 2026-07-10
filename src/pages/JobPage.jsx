@@ -1,9 +1,30 @@
 import React from 'react'
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useParams } from "react-router-dom"
 import { Link } from "react-router-dom";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
-const JobPage = () => {
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+const JobPage = ( {deleteJob} ) => {
+    const { id } = useParams(); 
+    const navigate = useNavigate();
     const job = useLoaderData();
+
+    if (!job || !job.company) {
+        return <p className="text-center" style={{ padding: '20px' }}>Loading data...</p>;
+    }
+
+    const onDeleteClick = ( jobId ) => {
+        const confirm = window.confirm('Are you sure you want to delete this listing?')
+
+        if(!confirm) return;
+
+        deleteJob(jobId);
+        toast.success('Job deleted successfully');
+
+        navigate('/jobs');
+    }
   return (
     <>
     <section className="back-section">
@@ -46,7 +67,7 @@ const JobPage = () => {
                     <div className="job-card">
                         <h3 className="sidebar-title">Manage Job</h3>
                         <Link to={`/edit-job/${job.id}`} className="button btn-edit">Edit Job</Link>
-                        <button className=" button btn-delete">Delete Job</button>
+                        <button onClick={() => onDeleteClick( job.id )} className=" button btn-delete">Delete Job</button>
                     </div>
                 </aside>
             </div>
@@ -60,6 +81,6 @@ const jobLoader = async ({ params }) => {
     const res = await fetch(`/api/jobs/${params.id}`);
     const data = await res.json();
     return data;
-}
+ }
 
 export { JobPage as default, jobLoader};
